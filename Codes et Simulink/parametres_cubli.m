@@ -1,3 +1,5 @@
+%Paramètres mécaniques du cubli
+
 mb=0.43;
 mw=0.096;
 l=9.65*0.01;
@@ -11,6 +13,7 @@ Cw=2.95e-5;
 g=9.81;
 Ki=25.1*0.001;
 
+% Principe de la commande LQR
 % Q=eye(4,4); %poids donné à la commande (commande violente)
 % R=0.1*eye(4,4);
 %x' = A*x+B*U
@@ -18,20 +21,8 @@ Ki=25.1*0.001;
 %u = tm
 %u = -K*x
 
-% A=[0 1 0 0;
-%    (mb*lb+mw*l)*g/(Ib+mw*l^2) -Cb/(Ib+mw*l^2) 0 Cw/(Ib+mw*l^2);
-%    0 0 0 1;
-%    -(mb*lb+mw*l)*g/(Ib+mw*l^2) Cb/(Ib+mw*l^2) 0 (Ib+Iw+mw*l^2)/(Iw*(Ib+mw*l^2))];
-% 
-% B=[0 0 0 0;
-%    -1/(Ib+mw*l^2) 0 0 0;
-%    0 0 0 0;
-%    (Ib+Iw+mw*l^2)/(Iw*(Ib+mw*l^2)) 0 0 0];
-% 
-% N=zeros(4,4);
-% 
-% [K,S,e]=lqr(A,B,Q,R,N)
 
+% Implémentation de la commande LQR
 A3=[0 1 0 ;
    (mb*lb+mw*l)*g/(Ib+mw*l^2) -Cb/(Ib+mw*l^2)  Cw/(Ib+mw*l^2);
    -(mb*lb+mw*l)*g/(Ib+mw*l^2) Cb/(Ib+mw*l^2)  -Cw*(Ib+Iw+mw*l^2)/(Iw*(Ib+mw*l^2))];
@@ -50,4 +41,5 @@ Tm_sat=3.0;
 
 [K3,S3,e3]=lqr(A3,B3,Q3,R3,N3);
 
+%Fréquence de fonctionnement de l'implémentation du microprocesseur
 freq_proc=10000;
