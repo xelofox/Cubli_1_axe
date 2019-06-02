@@ -24,3 +24,8 @@ Ces caractéristiques sont retrouvables sur le script matlab Parametre.m.
 Commande LQR 
 
 La commande implémenter a été la même que celle des articles scientifiques, elle se retrouve aussi dans le script matlab à l'aide de la fonction LQR de matlab. Les coefficients de matrices Q et R peut être modifié à convenance en fonction de comment l'on veut que le système réagisse (violement ou lentement).
+
+Modélisation
+La modélisation avec l'application de la commande LQR est retrouvable sur le fichier simulink Modele17.slx
+
+L'implémentation à envoyer sur le microprocesseur est le fichier commandemoteur.slx, les pins à branchés sur la carte sont retrouvable dans la documentation de la carte (DAC etc).
