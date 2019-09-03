@@ -27,4 +27,6 @@ La commande implémenter a été la même que celle des articles scientifiques, 
 
 La modélisation avec l'application de la commande LQR est retrouvable sur le fichier simulink Modele17.slx
 
+Le test de la récupération de la vitesse du moteur avec les sondes à effet Hall avec une utilisation du microprocesseur est disponible à Hall_CPU.slx .
+
 L'implémentation à envoyer sur le microprocesseur est le fichier commandemoteur.slx, les pins à branchés sur la carte sont retrouvable dans la documentation de la carte (DAC etc).
